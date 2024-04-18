@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    letter-spacing: 2px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-image: url(../imgs/iabotfisico.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    margin: 30px auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(30px);
+    color: white;
+}
+
+.saldo {
+    text-align: center;
+}
+
+#btnnovo {
+    color: #1b00a0;
+    border: 2px solid black;
+    font-weight: bold;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    letter-spacing: 2px;
+}
+
+#btnnovo:hover {
+    border: 2px solid blue;
+    box-shadow: 0 0 24px;
+    transform: scale(1.2);
+}
+
+.janelaaddtransac {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    text-align: center;
+    background-color: #0000004f;
+    backdrop-filter: blur(20px);
+}
+
+.janelaaddtransac.abrir {
+    display: flex;
+}
+
+.addtransac {
+    background: rgba(228, 226, 226, 0.993);
+    width: 40%;
+    min-width: 100px;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin: 0;
+    color: #2e75cc;
+}
+
+h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 10px 0 10px;
+}
+
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.inc-exp-container {
+
+    box-shadow: var(--box-shadow);
+
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.inc-exp-container>div {
+    padding: 20px;
+    text-align: center;
+}
+
+.inc-exp-container>div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: #2ecc71;
+}
+
+.money.minus {
+    color: #c0392b;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type='text'],
+input[type='date'],
+input[type='number'] {
+    outline: none;
+    border: 2px solid #21007c;
+    border-radius: 30px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #1b00a0;
+    color: #fff;
+    border: 0;
+    border-radius: 30px;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    letter-spacing: 3px;
+
+}
+
+.btn:hover {
+    box-shadow: 0 0 24px green;
+    transform: scale(1.1);
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+.transactions {
+    height: 200px;
+    min-width: 300px;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+
+    overflow-y: scroll;
+    word-wrap: break-word;
+    padding: 30px;
+
+}
+
+.transactions li {
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    color: blue;
+    border-radius: 30px;
+    line-height: 0;
+
+}
+
+.transactions li p {
+    color: black;
+    display: inline-block;
+}
+
+.transactions li.maior {
+    border-right: 10px solid #2ecc71;
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+.transactions li.menor {
+    box-shadow: 0 0 10px #c0392b;
+    border-right: 10px solid #c0392b;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 4px 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.transactions li:hover .delete-btn {
+    opacity: 1;
+}
